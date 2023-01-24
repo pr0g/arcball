@@ -28,4 +28,4 @@ target_sources(
           Demo.c)
 
 target_link_libraries(
-  ${PROJECT_NAME} PRIVATE X11::X11 OpenGL::GL OpenGL::GLU OpenGL::GLX m c SDL2::SDL2)
+  ${PROJECT_NAME} PRIVATE X11::X11 OpenGL::GL OpenGL::GLU m c SDL2::SDL2)
