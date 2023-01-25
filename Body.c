@@ -2,7 +2,11 @@
 // #include "igl.h"
 #include "Body.h"
 
-#include <opengl/gl.h>
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#else
+#include <GL/gl.h>
+#endif
 
 enum QuatPart
 {

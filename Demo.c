@@ -1,10 +1,16 @@
 /***** Demo.c *****/
 /* Ken Shoemake, 1993 */
 
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#endif
+
 #include <stdlib.h>
 #include <SDL.h>
-#include <opengl/gl.h>
-#include <opengl/glu.h>
 #include <stdbool.h>
 
 #include "BallAux.h"
@@ -18,8 +24,6 @@ typedef struct
 } Place;
 
 #define RADIUS (0.75)
-#define CNTRLDN 1
-#define SHIFTDN 2
 
 float radians(float degrees)
 {

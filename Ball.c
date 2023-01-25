@@ -4,7 +4,12 @@
 #include "Ball.h"
 #include "BallMath.h"
 
-#include <opengl/gl.h>
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#else
+#include <GL/gl.h>
+#endif
+
 #include <stdbool.h>
 #include <math.h>
 #include <stdio.h>
