@@ -4,7 +4,7 @@
 #include "Ball.h"
 #include "BallMath.h"
 
-#include <GL/gl.h>
+#include <opengl/gl.h>
 #include <stdbool.h>
 #include <math.h>
 #include <stdio.h>

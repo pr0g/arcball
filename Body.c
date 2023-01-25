@@ -2,7 +2,7 @@
 // #include "igl.h"
 #include "Body.h"
 
-#include "GL/gl.h"
+#include <opengl/gl.h>
 
 enum QuatPart
 {
@@ -59,9 +59,6 @@ void drawbody(Matrix Rot)
     register int i, j, k, n;
 
     glPushMatrix();
-    // static float rot = 0.0f;
-    // glRotatef(rot, 1.0f, 0.0f, 0.0f);
-    // rot += 1.0f;
     glScalef(bodyScale, bodyScale, bodyScale);
     for (j = 0; j < bodyNFaces; j++)
     {
@@ -78,7 +75,7 @@ void drawbody(Matrix Rot)
             n = theFaceVertices[j][0];
 
             glColor3f((float)shadedColor[0]/255.0f, (float)shadedColor[1]/255.0f, (float)shadedColor[2]/255.0f);
-            
+
             glBegin(GL_POLYGON);
             for (k = 1; k <= n; k++)
             {

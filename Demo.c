@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 #include <SDL.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
+#include <opengl/gl.h>
+#include <opengl/glu.h>
 #include <stdbool.h>
 
 #include "BallAux.h"
