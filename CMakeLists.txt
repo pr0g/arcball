@@ -26,7 +26,7 @@ target_sources(
           Body.h
           Demo.c)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL OpenGL::GLU m c
+target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL OpenGL::GLU m
                                               SDL2::SDL2)
 if(APPLE)
   target_compile_definitions(${PROJECT_NAME} PRIVATE GL_SILENCE_DEPRECATION)
