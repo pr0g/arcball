@@ -28,11 +28,15 @@ target_sources(
 
 target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL SDL2::SDL2 SDL2::SDL2main)
 
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+  target_link_libraries(${PROJECT_NAME} PRIVATE m)
+endif()
+
 if(APPLE)
   target_compile_definitions(${PROJECT_NAME} PRIVATE GL_SILENCE_DEPRECATION)
 endif()
 
-if (WIN32)
+if(WIN32)
   # copy the SDL2.dll to the same folder as the executable
   add_custom_command(
     TARGET ${PROJECT_NAME}
@@ -40,4 +44,4 @@ if (WIN32)
     COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:SDL2::SDL2>
             $<TARGET_FILE_DIR:${PROJECT_NAME}>
     VERBATIM)
-endif ()
+endif()

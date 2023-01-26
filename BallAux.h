@@ -1,4 +1,5 @@
 /***** BallAux.h - Vector and quaternion routines for Arcball. *****/
+
 #ifndef _H_BallAux
 #define _H_BallAux
 
@@ -21,4 +22,5 @@ HVect V3_Sub(HVect v1, HVect v2);
 float V3_Dot(HVect v1, HVect v2);
 HVect V3_Cross(HVect v1, HVect v2);
 HVect V3_Bisect(HVect v0, HVect v1);
+
 #endif

@@ -1,6 +1,8 @@
 /***** Ball.h *****/
+
 #ifndef _H_Ball
 #define _H_Ball
+
 #include "BallAux.h"
 
 typedef enum AxisSet{NoAxes, CameraAxes, BodyAxes, OtherAxes, NSets} AxisSet;
@@ -36,4 +38,5 @@ void DrawHalfArc(HVect n);
 void Ball_DrawConstraints(BallData *ball);
 void Ball_DrawDragArc(BallData *ball);
 void Ball_DrawResultArc(BallData *ball);
+
 #endif

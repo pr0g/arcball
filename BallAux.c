@@ -1,6 +1,8 @@
 /***** BallAux.c *****/
-#include <math.h>
+
 #include "BallAux.h"
+
+#include <math.h>
 
 Quat qOne = {0, 0, 0, 1};
 
