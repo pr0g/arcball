@@ -5,7 +5,7 @@
 
 #include "BallAux.h"
 
-float pi();
+extern const float g_pi;
 
 HVect MouseOnSphere(HVect mouse, HVect ballCenter, float ballRadius);
 HVect ConstrainToAxis(HVect loose, HVect axis);

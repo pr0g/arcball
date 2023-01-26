@@ -106,7 +106,6 @@ void Ball_Value(BallData *ball, HMatrix mNow)
     for (i=15; i>=0; i--) ((float *)mNow)[i] = ((float *)ball->mNow)[i];
 }
 
-
 /* Begin drag sequence. */
 void Ball_BeginDrag(BallData *ball)
 {
@@ -131,7 +130,7 @@ void circ(float x, float y, float r)
     glColor3f(1.0f, 1.0f, 1.0f);
     glBegin(GL_LINE_LOOP);
     float rot = 0.0f;
-    float inc = (pi() * 2.0f) / 40.0f;
+    float inc = (g_pi * 2.0f) / 40.0f;
     for (int i = 0; i < 40; ++i) {
         float x = cosf(rot);
         float y = sinf(rot);

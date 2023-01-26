@@ -5,9 +5,7 @@
 
 #include <math.h>
 
-float pi() {
-    return 3.14159265359f;
-}
+const float g_pi = 3.14159265359f;
 
 /* Convert window coordinates to sphere coordinates. */
 HVect MouseOnSphere(HVect mouse, HVect ballCenter, float ballRadius)

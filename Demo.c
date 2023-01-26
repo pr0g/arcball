@@ -47,7 +47,7 @@ HMatrixRet perspective(
 
 float radians(float degrees)
 {
-	return degrees * pi() / 180.0f;
+	return degrees * g_pi / 180.0f;
 }
 
 /* Draw the object being controlled. */
