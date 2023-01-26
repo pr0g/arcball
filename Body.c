@@ -1,10 +1,13 @@
 /***** Body.c *****/
-// #include "igl.h"
+
 #include "Body.h"
 
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #else
+#ifdef _WIN32
+#include <windows.h>
+#endif // _WIN32
 #include <GL/gl.h>
 #endif
 
@@ -15,6 +18,7 @@ enum QuatPart
     Z,
     W
 };
+
 int bodyNPoints = 8;
 int bodyNFaces = 7;
 

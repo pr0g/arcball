@@ -26,8 +26,18 @@ target_sources(
           Body.h
           Demo.c)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL OpenGL::GLU m
-                                              SDL2::SDL2)
+target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL SDL2::SDL2 SDL2::SDL2main)
+
 if(APPLE)
   target_compile_definitions(${PROJECT_NAME} PRIVATE GL_SILENCE_DEPRECATION)
 endif()
+
+if (WIN32)
+  # copy the SDL2.dll to the same folder as the executable
+  add_custom_command(
+    TARGET ${PROJECT_NAME}
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:SDL2::SDL2>
+            $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    VERBATIM)
+endif ()

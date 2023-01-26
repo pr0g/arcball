@@ -5,18 +5,21 @@
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #else
+#ifdef _WIN32
+#include <windows.h>
+#endif // _WIN32
 #include <GL/gl.h>
-#include <GL/glu.h>
-#endif
-
-#include <stdlib.h>
-#include <SDL.h>
-#include <stdbool.h>
+#endif // __APPLE__
 
 #include "BallAux.h"
 #include "Body.h"
 #include "Ball.h"
 #include "BallMath.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <SDL.h>
+#include <stdbool.h>
 
 typedef struct
 {
@@ -24,6 +27,23 @@ typedef struct
 } Place;
 
 #define RADIUS (0.75)
+
+typedef struct HMatrixRet
+{
+	HMatrix matrix;
+} HMatrixRet;
+
+HMatrixRet perspective(
+	const float fovy, const float aspect, const float n, const float f)
+{
+  const float e = 1.0f / tanf(fovy * 0.5f);
+  return  (HMatrixRet){
+	      .matrix = { 
+			{e / aspect, 0.0f,  0.0f,                    0.0f},
+            {0.0f,      e,      0.0f,                    0.0f},
+            {0.0f,      0.0f,  (f + n) / (n - f),       -1.0f},
+            {0.0f,      0.0f,  (2.0f * f * n) / (n - f), 0.0f}}};
+}
 
 float radians(float degrees)
 {
@@ -88,7 +108,11 @@ int main(int argc, char **argv)
 	SDL_GL_MakeCurrent(window, context);
 	SDL_GL_SetSwapInterval(1); // enable vsync
 
-	gluPerspective(90.0f, (float)width / (float)height, 0.001, 100000.f);
+    // gluPerspective alternative
+	HMatrixRet persp = perspective(
+        radians(90.0f), (float)width / (float)height, 0.001, 100000.f);
+	glMultMatrixf(&persp.matrix[0][0]);
+
 	glTranslatef(0.f, 0.f, -2.0f);
 	active = 0;
 
@@ -218,4 +242,6 @@ int main(int argc, char **argv)
 	SDL_GL_DeleteContext(context);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+
+	return 0;
 }
