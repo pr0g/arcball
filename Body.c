@@ -71,7 +71,7 @@ void drawbody(Matrix Rot)
     for (j = 0; j < bodyNFaces; j++)
     {
         float dot = Rot[X][Z] * theFaceNormals[j][X] + Rot[Y][Z] * theFaceNormals[j][Y] + Rot[Z][Z] * theFaceNormals[j][Z];
-        // if (dot > 0.f)
+        if (dot > 0.f)
         { /* Front-facing polygon, so draw it */
             short shadedColor[3];
             dot += 0.4f;
