@@ -12,8 +12,8 @@ The original demo uses a version of [IRIS GL](https://en.wikipedia.org/wiki/IRIS
 
 An attempt was made to use [igl](https://github.com/irixxxx/igl) (an open source replacement for IRIS GL using OpenGL under X11) but there were other problems getting this to work so SDL was selected instead. The other advantage to this approach is the demo now works on Windows, macOS and Linux 🥳
 
-<img width="400" alt="Screenshot 2023-01-25 at 20 14 52" src="https://user-images.githubusercontent.com/1136625/215216747-689f0a80-9321-49be-a448-4ef5c99f6ac1.png">
-<img width="395" alt="Screenshot 2023-01-25 at 20 19 32" src="https://user-images.githubusercontent.com/1136625/215217658-f248987a-c1c7-4654-b8ac-2228a86cd408.png">
+<img width="380" alt="Screenshot 2023-01-25 at 20 14 52" src="https://user-images.githubusercontent.com/1136625/215216747-689f0a80-9321-49be-a448-4ef5c99f6ac1.png">
+<img width="375" alt="Screenshot 2023-01-25 at 20 19 32" src="https://user-images.githubusercontent.com/1136625/215217658-f248987a-c1c7-4654-b8ac-2228a86cd408.png">
 
 ## Building
 
