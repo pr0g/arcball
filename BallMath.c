@@ -1,9 +1,7 @@
 /**** BallMath.c - Essential routines for ArcBall.  ****/
-
+#include <math.h>
 #include "BallMath.h"
 #include "BallAux.h"
-
-#include <math.h>
 
 const float g_pi = 3.14159265359f;
 

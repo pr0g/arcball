@@ -19,11 +19,11 @@
 
 #define LG_NSEGS 4
 #define NSEGS (1<<LG_NSEGS)
-#define RIMCOLOR()    glColor3f(255.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f)
-#define FARCOLOR()    glColor3f(195.0f/255.0f, 127.0f/255.0f, 31.0f/255.0f)
-#define NEARCOLOR()   glColor3f(255.0f/255.0f, 255.0f/255.0f, 63.0f/255.0f)
-#define DRAGCOLOR()   glColor3f(127.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f)
-#define RESCOLOR()    glColor3f(195.0f/255.0f, 31.0f/255.0f, 31.0f/255.0f)
+#define RIMCOLOR()    glColor3ub(255, 255, 255)
+#define FARCOLOR()    glColor3ub(195, 127, 31)
+#define NEARCOLOR()   glColor3ub(255, 255, 63)
+#define DRAGCOLOR()   glColor3ub(127, 255, 255)
+#define RESCOLOR()    glColor3ub(195, 31, 31)
 
 HMatrix mId = {{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
 float otherAxis[][4] = {{-0.48f, 0.80f, 0.36f, 1.f}};
@@ -105,6 +105,7 @@ void Ball_Value(BallData *ball, HMatrix mNow)
     int i;
     for (i=15; i>=0; i--) ((float *)mNow)[i] = ((float *)ball->mNow)[i];
 }
+
 
 /* Begin drag sequence. */
 void Ball_BeginDrag(BallData *ball)
