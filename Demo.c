@@ -66,7 +66,7 @@ void scene_Draw(BallData *ball)
 }
 
 
-int main(void)
+int main(int argc, char** argv)
 {
     Place mouseNow;
     int keysDown = 0;
@@ -87,7 +87,7 @@ int main(void)
     const int height = 600;
     const float aspect = (float)width / (float)height;
     SDL_Window *window = SDL_CreateWindow(
-        "arcball", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height,
+        argv[0], SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height,
         SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 
     if (window == NULL) {
