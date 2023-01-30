@@ -68,10 +68,10 @@ void scene_Draw(BallData *ball)
 
 int main(int argc, char** argv)
 {
-    Place mouseNow;
+    Place mouseNow = {0};
     int keysDown = 0;
-    HVect vNow;
-    BallData ball;
+    HVect vNow = qOne;
+    BallData ball = {0};
 
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
@@ -100,7 +100,7 @@ int main(int argc, char** argv)
     SDL_GL_SetSwapInterval(1); // enable vsync
 
     // gluPerspective alternative
-    HMatrixRet persp = perspective(
+    const HMatrixRet persp = perspective(
         radians(90.0f), (float)width / (float)height, 0.01f, 100000.f);
     glMultMatrixf(&persp.matrix[0][0]);
 
