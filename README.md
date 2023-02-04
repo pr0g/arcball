@@ -29,6 +29,12 @@ cmake --build build
 ./build/arcball # build\arcball.exe on Windows
 ```
 
+> Note: On Linux it may also be necessary to install a few additional dependencies, see them listed below:
+
+```bash
+> sudo apt-get install libx11-dev libglu1-mesa-dev libgl1-mesa-glx libxext-dev ninja-build
+```
+
 ## Thanks
 
 Special thank you to [Eric Haines](https://erich.realtimerendering.com/) and [Andrew Glassner](https://www.glassner.com/) for allowing me to share this derivative work and their kind words of encouragement and support. Also a huge thank you to Ken Shoemake for this fantastic demo that is still magical to use 30 years later!
