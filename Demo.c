@@ -157,7 +157,11 @@ int main(int argc, char** argv)
                     keysDown |= Keys_LeftShift;
                 }
                 if (keyboard_event->keysym.sym == SDLK_CAPSLOCK) {
-                    Ball_ShowResult(&ball);
+                    if (ball.showResult) {
+                      Ball_HideResult(&ball);
+                    } else {
+                      Ball_ShowResult(&ball);
+                    }
                 }
             }
 
@@ -168,9 +172,6 @@ int main(int argc, char** argv)
                 }
                 if (keyboard_event->keysym.sym == SDLK_LSHIFT) {
                     keysDown &= ~Keys_LeftShift;
-                }
-                if (keyboard_event->keysym.sym == SDLK_CAPSLOCK) {
-                    Ball_HideResult(&ball);
                 }
             }
         }
